@@ -11,10 +11,16 @@ https://xenabrowser.net/datapages/?dataset=TCGA-COAD.htseq_fpkm.tsv&host=https%3
 colon_cancer_phenotypes.gz
 https://xenabrowser.net/datapages/?dataset=TCGA-COAD.GDC_phenotype.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
 
+The initial list of clock genes were manually currated from teh Masri lab
+
 GO Terms used were obtained from uniprot, for purposes of clarity, there are also provided as: Human_all_GO_terms.tab.gz
 
 The scripts provided should detail the analysis.  Breifly, the steps are listed below:
 
 1. we read in the datasets and chose samples which are informative (remove non-tumor and replicate samples based on barcode).  Information on how TCGA barcodes are specified can be found here: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/
 
-2. Retain only the genes of interest from assignment in "circadian" pathways, inspect their relative expression level and 
+2. These are annotated as ENSMBL,so we will add the gene symbols from HGNC.  These data are found here: https://www.genenames.org/download/custom/ 
+
+3. Retain only the genes of interest from assignment in "circadian" pathways, inspect their relative expression level and plot as "mean expression plot".
+
+4.  Inspect intercorrelation among clock genes and how those relate to clinical traits
